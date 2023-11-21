@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(/src/julian-o-hayon-HY3l4IeOc3E-unsplash.jpg);
+  background-size: contain;
+  background-repeat: repeat;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.container {
+  background-color: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+  
+}
+
+.image_container {
+  width: 280px;
+  height: 200px;
+  margin: auto;
+  display: flex;
+
+}
+
+.product {
+  box-shadow: gray 2px 2px 12px;
+
+  background-color: white;
+  font-size: 20px;
+  padding: 30px;
+  text-align: left;
+  width: 350px;
+  height: 400px;
+  margin: 10px;
+  transition-duration: 0.9s;
+  border-radius: 10px;
+
+}
+.product:hover {
+  border: SOLID black 0.5PX;
+  box-shadow: rgb(0, 0, 0) 2px 2px 12px;
+
+}
+.add_panier_button {
+  border-radius: 5%;
+  padding: 10px 10px;
+  border: solid rgba(0, 0, 0, 0.274);
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  color : black;
+  transition-duration: 0.2s;
+
+}
+.add_panier_button:hover {
+  border: solid rgb(0, 0, 0);
+  margin: 2px;
+}
+.retour_button{
+  position:fixed;
+  right: 20px;
+  bottom: 40px;
+  border-radius: 80% 80% 0% 0%;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.242);
+  max-height: 100vh;
+}
+.retour_button:hover {
+  background-color: rgb(0, 0, 0);
+}
+.retour_button a{
+  color: white;
+  text-decoration: none;
+}
