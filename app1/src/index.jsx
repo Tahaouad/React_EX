@@ -27,67 +27,84 @@ const NavBar = () => {
   return (
     <nav id='nav' style={{ backgroundColor: 'black', padding: '10px', textAlign: 'center', position: 'sticky', top: 0 ,height :"30px"}}>
       <a href="#" style={{ position:'absolute',left:"20px" ,color: 'white', margin: '0 10px', textDecoration: 'none',fontWeight:'bold'}}>OrdiShop</a>
-      <a href="#" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Accueil</a>
-      <a href="#" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Produits</a>
-      <a href="#" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Contact</a>
+        <div style={{textAlign:"right"}}>
+        <a href="#" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Accueil</a>
+        <a href="#" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Produits</a>
+        <a href="#" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Contact</a>
+        </div>
     </nav>
   );
 }
 
 const Products = [
   {
+    id : 1,
     nom: ' Pro MacBook Air M2',
     prix: '11200.99',
     source: '/pc1.png',
   },
   {
+    id : 2,
     nom: 'Ordinateur  MacBook',
     prix: '29000.99',
     source: '/pc2.png',
   },
   {
+    id : 3,
     nom: 'Gaming Laptop GL503',
     prix: '39000.99',
     source: '/pc3.png',
   },
   {
+    id : 4,
     nom: 'Pro MacBook Air M1',
     prix: '5009.99',
     source: '/pc1.png',
   },
   {
+    id : 5,
     nom: 'Mac book lapt M3',
     prix: '50009.99',
     source: '/pc1.png',
   },
   {
+    id : 6,
     nom: ' Pro MacBook Air M2',
     prix: '11200.99',
     source: '/pc1.png',
   },
   {
+    id : 7,
     nom: 'Gaming Laptop GL503',
     prix: '39000.99',
     source: '/pc4.png',
   },
   {
+    id : 8,
     nom: 'Ordinateur  MacBook',
     prix: '29000.99',
     source: '/pc2.png',
   },
   {
+    id : 9,
     nom: 'Gaming Laptop GL503',
     prix: '39000.99',
     source: '/pc3.png',
+  },
+  {
+    id : 5,
+    nom: 'Mac book lapt M3',
+    prix: '50009.99',
+    source: '/pc1.png',
   }
 ];
-
+/*API*/
 const Product = (props) => {
   return (
     <div className='container' >
-      {props.products.map((produit, index) => (
-        <div key={index} className='product' >
-          <img className='image_container' src={produit.source} alt="Image Ordinateur" />
+      {props.products.map((produit) => (
+        <div key={produit.id} className='product' >
+          <img className='image_container' src={require(`../src${produit.source}`)} alt="Image Ordinateur" />
           <h4>{produit.nom}</h4>
           <h5>{produit.prix} Dhs</h5>
           <button className='add_panier_button'>Ajouter au panier</button>
@@ -107,12 +124,12 @@ const Sign = () => {
 
 root.render(
   <>
+
     <NavBar />
     <Product products={Products} />
     <Sign />
-
     <button className='retour_button'><a href="nav">^</a></button>
-    
+
   </>
 );
 
