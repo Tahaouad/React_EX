@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //         <img src={el.src} alt='Image not found' style={{ width: '50px', height: '50px' }}/>
 //         <p>{el.nom}</p>
 //       </li>
-//     ))}
+//     ))}y
 //   </ul>
 // );
 

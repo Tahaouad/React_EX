@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #212426;
   background-size: contain;
   background-repeat: repeat;
   
@@ -25,6 +24,7 @@ code {
   flex-wrap: wrap;
   
 }
+
 
 .image_container {
   width: 280px;
@@ -84,3 +84,4 @@ code {
   color: white;
   text-decoration: none;
 }
+
