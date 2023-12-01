@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import React, { useState } from 'react';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const List = [
@@ -124,9 +126,8 @@ const Sign = () => {
 
 root.render(
   <>
-
     <NavBar />
-    <Product products={Products} />
+  <Product products={Products} />
     <Sign />
     <button className='retour_button'><a href="nav">^</a></button>
 
