@@ -10,6 +10,7 @@ import dice3Image from './images/dice-3.png';
 import dice4Image from './images/dice-4.png';
 import dice5Image from './images/dice-5.png';
 import dice6Image from './images/dice-6.png';
+import Form from './Form';
 
 export default class JeuDe extends React.Component {
   constructor(props) {
@@ -74,10 +75,13 @@ export default class JeuDe extends React.Component {
   }
 }
 
+
+
+
 const root = document.getElementById('root');
 ReactDOM.render(
   <React.StrictMode>
-    <JeuDe />
+    <Form/>
   </React.StrictMode>,
   root
 );
