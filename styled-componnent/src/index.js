@@ -13,11 +13,7 @@ const products =[
   {nom: 'Special item',prix:18.00},
   {nom: 'Sale item',prix:25.00},
   {nom: 'Popular item',prix:40.00},
-  {nom: 'Popular item',prix:40.00},
-  {nom: 'Popular item',prix:40.00},
-  {nom: 'Popular item',prix:40.00},
-  {nom: 'Popular item',prix:40.00},
-  {nom: 'Popular item',prix:40.00}
+
  
 ]
 root.render(
@@ -25,8 +21,7 @@ root.render(
     <NavBar />
     <Main />
     <Card product ={products}/>
-    <Main />
-    <Card product ={products}/>
+    
     <Footer />
   </React.StrictMode>
 );
