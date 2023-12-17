@@ -17,6 +17,7 @@ const products =[
   {nom: 'Popular item',prix:40.00},
   {nom: 'Popular item',prix:40.00},
   {nom: 'Popular item',prix:40.00},
+  {nom: 'Popular item',prix:40.00}
  
 ]
 root.render(
