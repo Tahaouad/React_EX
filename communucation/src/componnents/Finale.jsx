@@ -37,14 +37,37 @@ const List_etudiant = [
         prenom : 'Youssef',
         Sexe : M,
         filiere : ID
+    },
+    {
+        nom : 'Dafir',
+        prenom : 'Khalil',
+        Sexe : M,
+        filiere : ID
+    },
+    {
+        nom : 'Douiry',
+        prenom : 'Hamza',
+        Sexe : M,
+        filiere :DD
     }
 ]
 
 
 export default function Finale() {
     const[result,setResult] = useState(List_etudiant)
-    function chercher(sexe){
-        setResult(List_etudiant.filter(et=>et.Sexe.toLowerCase() === sexe.toLowerCase() || et.nom.toLowerCase() === sexe.toLowerCase() || et.prenom.toLowerCase() === sexe.toLowerCase()))
+    function chercher(V){
+        const list =List_etudiant.filter(
+            (et) =>
+                et.Sexe.toLowerCase() === V.toLowerCase() ||
+                et.nom.toLowerCase() === V.toLowerCase() ||
+                et.prenom.toLowerCase() === V.toLowerCase()
+        )
+        const sortedList = list.sort((a, b) =>
+        a.nom.localeCompare(b.nom)
+    );
+    setResult(sortedList)
+
+    V===""&&setResult(List_etudiant)
 
     }
   return (

@@ -17,7 +17,8 @@ const NavBar = ({ showNavBar, toggleNavBar }) => {
   };
 
   return (
-    <div className={`nav_bar ${showNavBar ? 'visible' : 'hidden'}`}>
+    
+    <div className={`nav_bar ${showNavBar ? 'visible' : 'hi dden'}`}>
       <div className="toggle-btn" onClick={toggleNavBar} style={mainContentStyle}>
         ☰
       </div>
