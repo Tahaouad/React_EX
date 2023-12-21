@@ -14,7 +14,7 @@ const FormRevision = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setAffichage(
-      `Je suis ${identifiant} né le ${datenaiss} à ${ville} et mes loisirs sont : ${loisir}`
+      `Je suis ${image} né le ${datenaiss} à ${ville} et mes loisirs sont : ${loisir}`
     );
   };
 
