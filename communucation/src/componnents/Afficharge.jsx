@@ -18,7 +18,8 @@ export default function Afficharge({list}) {
                     <td className='p-1'>{etudiant.prenom}</td>
                     <td className='p-1'>{etudiant.Sexe}</td>
                     <td className='p-1'>{etudiant.filiere}</td>
-                </tr>)
+                </tr>
+            )
             
             }
             {

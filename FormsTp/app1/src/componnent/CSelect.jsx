@@ -15,13 +15,14 @@ export default class CSelect extends Component {
     render() {
     return (
       <form>
-        <select onChange={this.handleChange}>
+        <select onChange={this.handleChange} name='tets'>
             {
                 this.props.options.map(
                     option=><option value={option}>{option}</option>
                 )
             }
         </select>
+
         <button type="button" onClick={this.handleClick}>Afficher L'option</button>
       </form>
     )
