@@ -7,7 +7,7 @@ export default function Article(props) {
             <div>
                 <h3>{pc.titre}</h3>
                 <img src={require(pc.image)} alt='img'/>
-                <h4>{pc.prix}</h4>
+                <h4>{pc.prix}</h4> bhsjn mkcv,sd
             </div>
         )}
     </div>
