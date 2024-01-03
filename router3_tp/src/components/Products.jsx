@@ -2,6 +2,7 @@ import {Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import ImageSlider from './ImageSlider';
 import ProductSlider from './ProductsSlide';
+import Decouvrir from './Decouvrir';
 
 const images=['slide-a-1.png','slide-3-1.png','slide-b-1.png']
 const Products=({products})=>{
@@ -126,6 +127,7 @@ const Products=({products})=>{
                 )
             }
         </div>
+        <Decouvrir />
 
         </>
     )
