@@ -14,8 +14,7 @@ const Inscription = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [db, setDb] = useState([]);
-
+  const [db,setDb]=useState([])
   const onChangeCompetences = (e) => {
     const newCompetence = e.target.value;
     if (!competence.includes(newCompetence)) {
@@ -35,8 +34,17 @@ const Inscription = () => {
       email: email,
       password: password
     }
-    password === confirmPassword && setDb([...db, newCompte]);
+    password === confirmPassword&&setDb([...db, newCompte]);
   };
+  const vider=()=>{
+    setNom('')
+    setPrenom('')
+    setVille(villes[0])
+    setSexe('')
+    setCompetence([])
+    setEmail('')
+    setPassword('')
+  }
 
   return (
     <div className="container mt-4">
@@ -156,15 +164,20 @@ const Inscription = () => {
               </div>
               <button
                 type="button"
-                className="btn btn-success"
+                className="btn btn-success w-25 m-1"
                 onClick={inscrire}
               >
                 S'inscrire
               </button>
+              <button
+                type="button"
+                className="btn btn-success w-25 m-1"
+                onClick={vider}
+              >
+                Renitialiser
+              </button>
             </form>
-            {db.map((d) => (
-              <div key={d.email}>{d.competence.join(', ')}</div>
-            ))}
+    
           </fieldset>
         </div>
       </div>
@@ -173,3 +186,4 @@ const Inscription = () => {
 };
 
 export default Inscription;
+
