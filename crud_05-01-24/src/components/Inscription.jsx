@@ -1,8 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const Inscription = () => {
-  const villes = ["Casablanca", "Marakech", "Rabat", "Asfi", "Agadir"];
+  const villes = ["Casablanca", "Marrakech", "Rabat", "Asfi", "Agadir"];
   const competences = ["Python", "Html", "CSS", "Java", "Mysql"];
   const sexes = ['Masculin', 'Feminin'];
 
@@ -14,7 +13,8 @@ const Inscription = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [db,setDb]=useState([])
+  const [db, setDb] = useState([]);
+
   const onChangeCompetences = (e) => {
     const newCompetence = e.target.value;
     if (!competence.includes(newCompetence)) {
@@ -26,32 +26,34 @@ const Inscription = () => {
 
   const inscrire = () => {
     const newCompte = {
-      nom: nom,
-      prenom: prenom,
-      ville: ville,
-      sexe: sexe,
-      competence: competence,
-      email: email,
-      password: password
-    }
-    password === confirmPassword&&setDb([...db, newCompte]);
+      nom,
+      prenom,
+      ville,
+      sexe,
+      competence,
+      email,
+      password
+    };
+
+    password === confirmPassword && setDb([...db, newCompte]);
   };
-  const vider=()=>{
-    setNom('')
-    setPrenom('')
-    setVille(villes[0])
-    setSexe('')
-    setCompetence([])
-    setEmail('')
-    setPassword('')
-  }
+
+  const vider = () => {
+    setNom('');
+    setPrenom('');
+    setVille(villes[0]);
+    setSexe('');
+    setCompetence([]);
+    setEmail('');
+    setPassword('');
+  };
 
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <fieldset className="border p-4 rounded shadow">
-            <legend className="text-center "><strong className='text-success fs-2'> Inscription</strong></legend>
+            <legend className="text-center"><strong className='text-success fs-2'>Inscription</strong></legend>
             <form>
               <div className="mb-2">
                 <label htmlFor="nom" className="form-label">
@@ -174,10 +176,9 @@ const Inscription = () => {
                 className="btn btn-success w-25 m-1"
                 onClick={vider}
               >
-                Renitialiser
+                Réinitialiser
               </button>
             </form>
-    
           </fieldset>
         </div>
       </div>
@@ -186,4 +187,3 @@ const Inscription = () => {
 };
 
 export default Inscription;
-

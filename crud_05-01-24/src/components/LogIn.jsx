@@ -50,7 +50,7 @@ const LogIn = () => {
                 <h6>
                   Vous n'avez pas de compte{" "}
                   <Link to={`/inscription`}>
-                    S'inscrire
+                    <span className="text-success">S'inscrire</span>
                   </Link>
                 </h6>
               </div>
