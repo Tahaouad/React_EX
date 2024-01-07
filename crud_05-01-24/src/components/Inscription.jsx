@@ -164,13 +164,20 @@ const Inscription = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
-              <button type="button" className="btn btn-success w-25 m-1" onClick={vider}>
-  Réinitialiser
-</button>
-<button type="button" className="btn btn-success w-25 m-1" onClick={inscrire}>
-  S'inscrire
-</button>
-
+              <button
+                type="button"
+                className="btn btn-success w-25 m-1"
+                onClick={inscrire}
+              >
+                S'inscrire
+              </button>
+              <button
+                type="button"
+                className="btn btn-success w-25 m-1"
+                onClick={vider}
+              >
+                Réinitialiser
+              </button>
             </form>
           </fieldset>
         </div>
