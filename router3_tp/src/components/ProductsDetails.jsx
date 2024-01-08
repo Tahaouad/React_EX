@@ -100,8 +100,9 @@ const ProductDetails = ({ products }) => {
               </div>
             )}
           </div>
-          <hr className="mt-5"/>
-          <h4>Description</h4>
+          <h4 className="mt-3">Description</h4>
+          <hr className=""/>
+
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
             aliquid voluptatem. Quod vero, consectetur similique labore deserunt,
