@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Products from './components/Products';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -53,8 +52,6 @@ const products = [
     libelle :'Pull white Raja club',
     prix : '299.00 DH'
   }
-
-
 ]
 function App() {
   return (

@@ -6,7 +6,6 @@ function Decouvrir(props) {
     position: 'relative',
     height: '500px',
     margin: '0',
-    width: '490px',
   };
 
   const backgroundStyle = {
@@ -21,6 +20,7 @@ function Decouvrir(props) {
     right: 10,
     padding: '1rem',
     zIndex: 2,
+    margin: '10px',
   };
 
   const imageStyle1 = {
@@ -35,22 +35,22 @@ function Decouvrir(props) {
   };
 
   return (
-    <div className='d-flex container-fluid w-100  justify-content-between'>
-      <div style={containerStyle}>
+    <div className='row justify-content-around'>
+      <div style={containerStyle} className='col-lg-4 col-md-4 mb-1'>
         <div style={{ ...backgroundStyle, ...imageStyle1 }}>
           <button className="decovriRbutton" style={{ ...buttonStyle }}>
             Découvrir &gt;
           </button>
         </div>
       </div>
-      <div style={containerStyle}>
+      <div style={containerStyle} className='col-lg-4 col-md-4 mb-1'>
         <div style={{ ...backgroundStyle, ...imageStyle2 }}>
           <button className="decovriRbutton" style={{ ...buttonStyle }}>
             Découvrir &gt;
           </button>
         </div>
       </div>
-      <div style={containerStyle}>
+      <div style={containerStyle} className='col-lg-4 col-md-4 mb-1'>
         <div style={{ ...backgroundStyle, ...imageStyle3 }}>
           <button className="decovriRbutton" style={{ ...buttonStyle }}>
             Découvrir &gt;

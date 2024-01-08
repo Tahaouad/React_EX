@@ -18,24 +18,24 @@ const ProductSlider = ({ items }) => {
 
   return (
     <>
-      <h1 className='m-auto fw-bold text-center text-success '>Top products</h1>
+      <h1 className='m-auto fw-bold text-center text-success'>Top products</h1>
       <h6 className='m-auto text-center fw-lighter'>Les dernières tendances du Raja</h6>
       <div className="d-flex w-100 overflow-hidden">
-        <div className="d-flex transition" style={{ transform: `translateX(${-currentIndex * 360}px)` }}>
-          {items.map((item, index) => (
+        <div className="d-flex transition" style={{ transform: `translateX(${-currentIndex * 50}px)` }}>
+          {displayItems.map((item, index) => (
             <div className="card p-1 m-2" style={{ width: '360px' }} key={item.id}>
               <Link to={`/ProductsDetails/${item.id}`}>
                 <img src={require(`../images/${item.image}`)} alt="test" />
               </Link>
-              <h4 className="card-title ">{item.libelle}</h4>
+              <h4 className="card-title">{item.libelle}</h4>
               <h6>{item.prix}</h6>
             </div>
           ))}
         </div>
       </div>
+      
     </>
   );
 };
 
 export default ProductSlider;
-    
