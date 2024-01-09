@@ -35,14 +35,14 @@ const ProductDetails = ({ products }) => {
   if (!productNow) {
     return <div>Product not available</div>;
   }
-  const { image, libelle, prix } = productNow;
+  const { image, libelle, prix, tailles, reference } = productNow;
   const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXl', 'XXXL'];
 
   return (
     <>
       <Navbar />
 
-      <div className="container mt-5" id="top">
+      <div className="container-fluid mt-5" id="top">
         <div className="row">
           <div className="col-md-5">
             <img
@@ -56,35 +56,43 @@ const ProductDetails = ({ products }) => {
             <p className="fs-2 fw-bold text-bold text-success mt-2">
               {parseInt(prix) * quantity} DHs
             </p>
-            <h2>{libelle}</h2>
-            <h6>Ref : RC135317644792</h6>
+            <h2 className="text-success">{libelle}</h2>
+            <h6>Ref : {reference}</h6>
             <hr />
 
             <div className="mb-3 d-flex justify-content-between align-items-center">
-                <h4 className="fs-6 fw-light mt-2">Tailles :</h4>
-                <div className="d-flex">
-                  {sizes.map((size) => (
+              {
+
+                (tailles[0] !== 'Taille unique') &&
+                <div className="d-flex ">
+
+                  <h4 className="fs-6 fw-light mt-2 col-md-11">Tailles :</h4>
+                  <hr />
+
+                  {tailles.map((size) => (
                     <button
                       key={size}
                       type="button"
-                      className={`btn btn-outline-success border m-1 ${
-                        selectedSize === size ? "active" : ""
-                      }`}
+                      className={`btn btn-outline-success border col-md-3 " ${selectedSize === size ? "active" : ""
+                        }`}
                       onClick={() => handleSizeChange(size)}
                     >
                       {size}
                     </button>
+
                   ))}
                 </div>
+
+              }
+
             </div>
             <hr />
-           
+
             <div>
               <div className="d-flex align-items-center mb-1">
                 <button
-                  className={`btn btn-outline-success me-2 ${
-                    parseInt(quantity) === 1 ? "disabled" : ""
-                  }`}
+                  className={`btn btn-outline-success me-2 ${parseInt(quantity) === 1 ? "disabled" : ""
+                    }`}
                   onClick={decreaseQuantity}
                 >
                   -
@@ -113,17 +121,18 @@ const ProductDetails = ({ products }) => {
                 Produit a bien ajouté au panier!
               </div>
             )}
-             <h4 className="mt-1">Description</h4>
-          <hr className="" />
+            <hr className="" />
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-            aliquid voluptatem. Quod vero, consectetur similique labore deserunt,
-            optio vitae sint praesentium accusamus cumque perspiciatis obcaecati
-            distinctio harum architecto quae voluptatem!
-          </p>
+            <h4 className="mt-1">Description</h4>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              aliquid voluptatem. Quod vero, consectetur similique labore deserunt,
+              optio vitae sint praesentium accusamus cumque perspiciatis obcaecati
+              distinctio harum architecto quae voluptatem!
+            </p>
           </div>
-         
+
         </div>
       </div>
       <Footer />

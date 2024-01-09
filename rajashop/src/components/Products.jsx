@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import ImageSlider from './ImageSlider';
@@ -8,6 +8,7 @@ import Footer from './Footer';
 
 const Products = ({ products }) => {
   const duplicatedProducts = [...products, ...products];
+  const [showAllProducts, setShowAllProducts] = useState(false);
 
   return (
     <div className='container-fluid'>
@@ -17,29 +18,38 @@ const Products = ({ products }) => {
 
       <img src={require('../images/cover.PNG')} alt="" className="img-fluid" />
 
-      {/* Product Section */}
-      <div className="container mt-5">
+      <div className="container-fluid mt-5">
         <h1 className='text-center text-success fw-bold'>EXPLORATION EXCLUSIVE</h1>
         <h6 className='text-center text-muted fw-lighter'>Latest trends from Raja</h6>
+
         <div className="row justify-content-center mt-2">
-          {products.map((product) => (
+          {products.slice(0, showAllProducts ? products.length : 8).map((product) => (
             <div className="col-md-3 col-sm-6 col-12 mb-3" key={product.id}>
-              <div className="card p-2" style={{ height: '100%' }}>
-                <Link to={`/ProductsDetails/${product.id}/#top`} onClick={(e) => e.stopPropagation()}>
+              <div className="card p-2" style={{ height: '540px', display: 'grid', gridTemplateRows: '1fr auto' }}>
+                <Link to={`/ProductsDetails/${product.id}`} onClick={(e) => e.stopPropagation()}>
                   <img
                     src={require(`../images/${product.image}`)}
                     alt={product.libelle}
                     className="card-img-top img-fluid"
                   />
                 </Link>
+
                 <div className="card-body d-flex flex-column">
                   <h4 className="card-title">{product.libelle}</h4>
-                  <h6 className="card-subtitle mb-2 text-muted">{product.prix}</h6>
-                  <button className="btn btn-success mt-auto">Buy</button>
+                  <h6 className="card-subtitle mb-2 fw-bolder fs-5 text-success">{product.prix}</h6>
+
+                  <Link to={`/ProductsDetails/${product.id}`}>
+                    <button className="btn btn-success mt-auto w-100">Buy</button>
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className='d-flex'>
+          <button className='btn btn-outline-success mx-auto align-item-center w-25 m-3' onClick={() => setShowAllProducts(!showAllProducts)}>
+            {showAllProducts ? 'Show Less' : 'Show All'}
+          </button>
         </div>
       </div>
 
